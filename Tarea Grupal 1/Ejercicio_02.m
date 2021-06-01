@@ -1,25 +1,25 @@
-% EJERCICIOS DE PROGRAMACI覰 - SCRIPTS EN MATLAB PARA RESOLVER E.D
+% EJERCICIOS DE PROGRAMACI脫N - SCRIPTS EN MATLAB PARA RESOLVER E.D
 %
-%   Autores: Camila Cueva, Jonnathan Espinoza y Edgar S醤chez
+%   Autores: Camila Cueva, Jonnathan Espinoza y Edgar S谩nchez
 %   Fecha: 03 de junio de 2021
 
 % EJERCICIO 02:
-%   y'=sen(x) Condici髇 inicial: y(0)=1
+%   y'=sen(x) Condici贸n inicial: y(0)=1
 
 clc, clear all;
 
 % RESOLVER E.D
-ED = 'Dy = sin(x)'; % definicion de mi Ecuacion Diferencial
-ci = 'y(0) = 1'; % definicion de mi Condicion Inicial
+ED = 'Dy = sin(x)'; % definici贸n de mi Ecuaci贸n Diferencial
+ci = 'y(0) = 1'; % definici贸n de mi Condici贸n Inicial
 y = dsolve(ED, ci, 'x'); % Resolucion de la E.D.
 
-presentar="El resultado de la ecuaci髇 diferencial es ="+string(y);
+presentar="El resultado de la ecuaci贸n diferencial es ="+string(y);
 disp(presentar)
 
 % GRAFICAR FUNCION
 x = linspace(-3, 1, 50); % generacion de un vector con los valores de x
-vy = eval(y); % evaluacion de mi fuci髇 y
-hold on % permite superponer los gr醘icos
+vy = eval(y); % evaluaci贸n de la funci贸n y 
+hold on % permite superponer los gr谩ficos
 plot(x, vy, 'r'); % graficar
 title('Ejercicio 02');
 xlabel('x');
@@ -29,7 +29,7 @@ grid on
 % GRAFICAR CAMPO DE DIRECCIONES
 f = @(x,y) sin(x); % declaramos la funcion. Equivalente a inline('y', 'x', 'y')
 iz=-5; paso=0.5; der=5; % definimos el intervalo para el meshgrid
-[xcd, ycd] = meshgrid(iz:paso:der, iz:paso:der);
+[xcd, ycd] = meshgrid(iz:paso:der,iz:paso:der);
 [n, m] = size(xcd);
 dx = ones(n,m);
 dy = f(xcd, ycd);
